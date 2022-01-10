@@ -10,8 +10,8 @@ public class Service {
 
     public List<Oferta> sortListeOfertaByPreis(List<Oferta> liste) {
         return liste.stream()
-                .sorted((oferta, otherOferta) -> oferta.getPreis().compareTo(otherOferta.getPreis()))
-                .sorted((oferta, otherOferta) -> oferta.getProzent().compareTo(otherOferta.getProzent()))
+                .sorted((oferta, otherOferta) ->  CharSequence.compare(otherOferta.getPreis(), oferta.getPreis()))
+                .sorted((oferta, otherOferta) ->  CharSequence.compare(otherOferta.getProzent(), oferta.getProzent()))
                 .collect(Collectors.toList());
     }
 }
