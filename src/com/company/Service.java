@@ -14,4 +14,14 @@ public class Service {
                 .sorted((oferta, otherOferta) ->  CharSequence.compare(otherOferta.getProzent(), oferta.getProzent()))
                 .collect(Collectors.toList());
     }
+
+    public String getMostFrequentPlace(List<Oferta> liste) {
+        Map.Entry<Ort, Long> maxLocation = liste.stream()
+                .collect(Collectors.groupingBy(Oferta::getOrt, Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .orElseThrow(NullPointerException::new);
+
+        return maxLocation.getKey() + ": " + maxLocation.getClass();
+    }
 }
