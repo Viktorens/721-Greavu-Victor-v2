@@ -15,8 +15,6 @@ public class Main {
             System.out.println(service.sortListeOfertaByPreis(listeOferta));
 
             repo.writeToFile("D:\\Documents\\facultate\\Java\\MAP\\712-Greavu-Victor-v2\\src\\com\\company\\offertensortiert.txt", listeOferta, "&");
-//            service.getMostFrequentPlace(listeTiere);
-//            System.out.println(service.getMostFrequentPlace(listeTiere));
 
         } catch (IOException e) {
             e.printStackTrace();
